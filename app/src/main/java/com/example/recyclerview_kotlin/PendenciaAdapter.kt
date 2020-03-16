@@ -1,28 +1,22 @@
 package com.example.recyclerview_kotlin
 
 import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.recyclerview_kotlin.model.Pendencia
 
-class PendenciaAdapter() : RecyclerView.Adapter<PendenciaViewHolder>() {
-
-    private lateinit var pendencias: MutableList<Pendencia>
-
-
-    constructor(pendencias: MutableList<Pendencia>) : this() {
-        this.pendencias = pendencias
-    }
-
-
-
+class PendenciaAdapter(val pendencias: MutableList<Pendencia>) : RecyclerView.Adapter<PendenciaViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): PendenciaViewHolder {
-        TODO("Not yet implemented")
+        val view: View = LayoutInflater.from(p0.context).inflate(
+            R.layout.pendencia_item, p0, false
+        )
+        return PendenciaViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return 0
+        return pendencias.size
     }
 
     override fun onBindViewHolder(p0: PendenciaViewHolder, p1: Int) {
