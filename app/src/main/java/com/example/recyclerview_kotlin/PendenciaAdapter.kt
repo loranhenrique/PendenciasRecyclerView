@@ -5,12 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.recyclerview_kotlin.model.Pendencia
+import kotlinx.android.synthetic.main.pendencia_item.view.*
 
-class PendenciaAdapter(val pendencias: MutableList<Pendencia>) : RecyclerView.Adapter<PendenciaViewHolder>() {
+class PendenciaAdapter() : RecyclerView.Adapter<PendenciaAdapter.PendenciaViewHolder>() {
 
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): PendenciaViewHolder {
-        val view: View = LayoutInflater.from(p0.context).inflate(
-            R.layout.pendencia_item, p0, false
+    private var pendencias: List<Pendencia> = listOf()
+
+    fun update(novasPendencias: List<Pendencia>){
+        pendencias = novasPendencias
+        notifyDataSetChanged()
+    }
+
+    inner class  PendenciaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
+    }
+
+    override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): PendenciaViewHolder {
+        val view: View = LayoutInflater.from(viewGroup.context).inflate(
+            R.layout.pendencia_item, viewGroup, false
         )
         return PendenciaViewHolder(view)
     }
@@ -19,11 +31,7 @@ class PendenciaAdapter(val pendencias: MutableList<Pendencia>) : RecyclerView.Ad
         return pendencias.size
     }
 
-    override fun onBindViewHolder(p0: PendenciaViewHolder, p1: Int) {
-        TODO("Not yet implemented")
+    override fun onBindViewHolder(viewHolder: PendenciaViewHolder, position: Int) {
+        viewHolder.itemView.pendencia_text.text = pendencias[position].nome
     }
-}
-
-class PendenciaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
 }

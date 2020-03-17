@@ -1,20 +1,20 @@
 package com.example.recyclerview_kotlin.model
 
-class Pendencia(var nome: String = "", var pendencia: String = "") {
+data class Pendencia(val nome: String,
+                     val pendencia: String
+)
 
-        companion object {
-
-            val nome: String = ""
-            val pendencia: String = ""
-
-            fun build(): Pendencia {
-                var pendencias: Pendencia =
-                    Pendencia()
-
-                pendencias.nome = this.nome
-                pendencias.pendencia = pendencia
-
-                return  pendencias
-            }
-        }
-}
+fun minhasPendencias(): MutableList<Pendencia> = mutableListOf(
+    Pendencia(
+        nome = "Loran",
+        pendencia = "Projetinho"
+    ),
+    Pendencia (
+        nome = "Mateus",
+        pendencia = "Orientador"
+    ),
+    Pendencia (
+        nome = "Luciano",
+        pendencia = "Orientador"
+    )
+)
