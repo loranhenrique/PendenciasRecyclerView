@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RecyclerView_Kotlin</string>
+    <string name="NomeApp">Pendências do Estagiário</string>
 </resources>

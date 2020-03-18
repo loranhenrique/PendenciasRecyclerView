@@ -5,50 +5,49 @@
     android:layout_height="wrap_content"
     android:background="@drawable/card_view_bg"
     android:orientation="vertical"
-    tools:showIn="@layout/activity_main"
-    >
+    tools:showIn="@layout/activity_main">
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_height="wrap_content">
+        android:layout_marginBottom="16dp">
 
         <TextView
             android:id="@+id/txt_icon"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"
             android:background="@drawable/circle"
             android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
             tools:text="F" />
 
         <TextView
             android:id="@+id/pendencia_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/darkerGrey"
-            android:layout_marginStart="16dp"
             android:layout_alignTop="@id/txt_icon"
+            android:layout_marginStart="16dp"
             android:layout_toEndOf="@id/txt_icon"
+            android:textColor="@color/darkerGrey"
+            android:textSize="18sp"
+            android:textStyle="bold"
             tools:text="Facebook" />
 
         <TextView
             android:id="@+id/pendencia_info"
-            android:singleLine="true"
-            android:ellipsize="marquee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:layout_below="@id/pendencia_nome"
             android:layout_alignStart="@id/pendencia_nome"
+            android:ellipsize="marquee"
+            android:singleLine="true"
             android:textColor="@color/darkerGrey"
+            android:textSize="16sp"
             tools:text="Facebook facebook facebook facebook facebook facebook facebook" />
-
 
 
     </RelativeLayout>
