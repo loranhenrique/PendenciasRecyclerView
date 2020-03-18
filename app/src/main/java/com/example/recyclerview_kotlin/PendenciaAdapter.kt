@@ -14,6 +14,10 @@ import kotlinx.android.synthetic.main.pendencia_item.view.*
 class PendenciaAdapter(var pendencias: MutableList<Pendencia>) : RecyclerView.Adapter<PendenciaAdapter.PendenciaViewHolder>() {
 
     inner class PendenciaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        //função para vincular as pendencias na viewHolder
+        //Colocando a letra P dentro do txt_icon
+        //adicionando backgroud nos txt_icon de forma aleatória com base na hash
+        //adicionar as pendencias nos seus campos designados
         fun bind(pend: Pendencia) {
             with(pend) {
                 val hash = nome.hashCode()
@@ -25,6 +29,7 @@ class PendenciaAdapter(var pendencias: MutableList<Pendencia>) : RecyclerView.Ad
         }
     }
 
+    //inflando a view pendencia_item
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): PendenciaViewHolder {
         val view: View = LayoutInflater.from(viewGroup.context).inflate(
             R.layout.pendencia_item, viewGroup, false
@@ -32,15 +37,19 @@ class PendenciaAdapter(var pendencias: MutableList<Pendencia>) : RecyclerView.Ad
         return PendenciaViewHolder(view)
     }
 
+    //pegando o tamanho das pendencias
     override fun getItemCount(): Int {
         return pendencias.size
     }
 
+    //passando as pendencias para a viewHolder
+    //onde o viewHolder vai segurar as informações da view
     override fun onBindViewHolder(viewHolder: PendenciaViewHolder, position: Int) {
         viewHolder.bind(pendencias[position])
     }
 }
-
+//adicionar cores nos icones da frente
+//adicionando uma nova função para a View
 fun View.oval(@ColorInt color: Int): ShapeDrawable {
     val oval = ShapeDrawable(OvalShape())
     with(oval) {
