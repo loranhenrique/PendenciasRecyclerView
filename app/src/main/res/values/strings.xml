@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">RecyclerView_Kotlin</string>
     <string name="NomeApp">Pendências do Estagiário</string>
+    <string name="hintNome">Digite seu nome completo</string>
+    <string name="hintPendencia">hintPendencia</string>
+    <string name="hintPend">Digite a nova pendência</string>
+    <string name="bt_cancelar">Cancelar</string>
+    <string name="bt_enviar">Enviar</string>
 </resources>

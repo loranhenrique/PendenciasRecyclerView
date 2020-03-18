@@ -7,4 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".NovaPendencia">
 
+    <EditText
+        android:id="@+id/et_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/hintNome"
+        android:textSize="24dp" />
+
+    <EditText
+        android:id="@+id/et_pendencia"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_nome"
+        android:layout_marginTop="44sp"
+        android:hint="@string/hintPend"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/bt_cancelar"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24sp"
+        android:text="@string/bt_cancelar"
+        android:layout_marginBottom="24dp"
+        />
+
+    <Button
+        android:id="@+id/bt_enviar"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24sp"
+        android:text="@string/bt_enviar"
+        android:layout_marginBottom="24dp"
+        />
+
+
 </RelativeLayout>
