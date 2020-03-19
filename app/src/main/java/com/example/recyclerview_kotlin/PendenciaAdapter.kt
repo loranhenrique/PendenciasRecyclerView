@@ -11,7 +11,8 @@ import android.view.ViewGroup
 import com.example.recyclerview_kotlin.model.Pendencia
 import kotlinx.android.synthetic.main.pendencia_item.view.*
 
-class PendenciaAdapter(var pendencias: MutableList<Pendencia>) : RecyclerView.Adapter<PendenciaAdapter.PendenciaViewHolder>() {
+class PendenciaAdapter(var pendencias: MutableList<Pendencia>) :
+    RecyclerView.Adapter<PendenciaAdapter.PendenciaViewHolder>() {
 
     inner class PendenciaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //função para vincular as pendencias na viewHolder
@@ -48,6 +49,7 @@ class PendenciaAdapter(var pendencias: MutableList<Pendencia>) : RecyclerView.Ad
         viewHolder.bind(pendencias[position])
     }
 }
+
 //adicionar cores nos icones da frente
 //adicionando uma nova função para a View
 fun View.oval(@ColorInt color: Int): ShapeDrawable {

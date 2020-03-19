@@ -27,23 +27,28 @@ class MainActivity : AppCompatActivity() {
         //para a construção de listas verticais
         recycler_view_main.layoutManager = LinearLayoutManager(this)
 
+        val nv_pendencia = intent.getStringArrayListExtra("nv_pendencia")
+
         //ação do botão FAB(FloatingActionButton) quando clicado
         //adiciona essa nova pendencia
         fab.setOnClickListener {
             val i: Intent = Intent(this, NovaPendencia::class.java)
+            if (nv_pendencia != null) {
+                i.putStringArrayListExtra("pendencias", nv_pendencia)
+            }
             startActivity(i)
         }
 
-        val nv_nome: String? = intent.getStringExtra("nv_nome")
-        val nv_pendencia: String? = intent.getStringExtra("nv_pendencia")
 
-        if (nv_nome != null && nv_pendencia != null) {
-            recycler_view_main.run {
-                pendenciaAdapter.pendencias.add(0, pendencia {
-                    nome = nv_nome
-                    pendencia = nv_pendencia
-                })
-                recycler_view_main.scrollToPosition(0)
+        if (nv_pendencia != null) {
+            for (i in nv_pendencia.indices step 2) {
+                recycler_view_main.run {
+                    pendenciaAdapter.pendencias.add(0, pendencia {
+                        nome = nv_pendencia[i]
+                        pendencia = nv_pendencia[i + 1]
+                    })
+                    recycler_view_main.scrollToPosition(0)
+                }
             }
         }
 
