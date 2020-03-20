@@ -1,14 +1,10 @@
 package com.example.recyclerview_kotlin
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.recyclerview_kotlin.model.minhasPendencias
-import com.example.recyclerview_kotlin.model.pendencia
-import kotlinx.android.synthetic.main.activity_main.*
+import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_nova_pendencia.*
-import java.util.ArrayList
+import java.util.*
 
 class NovaPendencia : AppCompatActivity() {
 

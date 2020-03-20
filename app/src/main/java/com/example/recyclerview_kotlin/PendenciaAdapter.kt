@@ -8,10 +8,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.recyclerview_kotlin.click_listeners.OnEditListener
 import com.example.recyclerview_kotlin.model.Pendencia
 import kotlinx.android.synthetic.main.pendencia_item.view.*
 
-class PendenciaAdapter(var pendencias: MutableList<Pendencia>) :
+class PendenciaAdapter(var pendencias: MutableList<Pendencia>, val editListener: OnEditListener) :
     RecyclerView.Adapter<PendenciaAdapter.PendenciaViewHolder>() {
 
     inner class PendenciaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -47,7 +48,13 @@ class PendenciaAdapter(var pendencias: MutableList<Pendencia>) :
     //onde o viewHolder vai segurar as informações da view
     override fun onBindViewHolder(viewHolder: PendenciaViewHolder, position: Int) {
         viewHolder.bind(pendencias[position])
+        //escuta se tem algum click em cima de um item, caso tenha
+        //chama a função editItem e passa suas posições
+        viewHolder.itemView.setOnClickListener {
+            editListener.editItem(pendencias[position], position)
+        }
     }
+
 }
 
 //adicionar cores nos icones da frente
